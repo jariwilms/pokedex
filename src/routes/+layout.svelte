@@ -1,74 +1,70 @@
 <script lang="ts">
-	import '../app.css';
-	import pokeballIcon from '$lib/assets/icons/pokeball_icon_resized.png';
+    import "../app.css";
+    import pokeballIcon from "$lib/assets/icons/pokeball.svg";
+    import githubIcon from "$lib/assets/icons/github-mark-white.svg";
 
-	let { children } = $props();
+    let { children } = $props();
 
-	const navLinks = [
-		{ name: 'Regions', href: '/regions' },
-		{ name: 'Pokémon', href: '/pokemon' },
-		{ name: 'Moves', href: '/moves' },
-		{ name: 'Abilities', href: '/abilities' },
-		{ name: 'Items', href: '/items' }
-	];
+    const navLinks = [
+        { name: "Regions", href: "/regions" },
+        { name: "Pokémon", href: "/pokemon" },
+        { name: "Moves", href: "/moves" },
+        { name: "Abilities", href: "/abilities" },
+        { name: "Items", href: "/items" },
+    ];
+
+    const headerOutsideWidth = "w-32";
 </script>
 
 <svelte:head>
-	<link rel="icon" href={pokeballIcon} />
+    <link rel="icon" href={pokeballIcon} />
 </svelte:head>
 
-<div class="flex flex-col min-h-screen bg-neutral-600">
-	<header>
-		<div class="grid h-14 grid-cols-3-equal-center bg-pokeball-top text-white">
-			<div class="flex items-center justify-center">
-				<a href="/" class="flex items-center justify-center space-x-2">
-					<div class="w-12 h-12 bg-white rounded-full">
-						<img src={pokeballIcon} alt="pokeball" />
-					</div>
-					<span class="text-3xl font-bold">Zorua</span>
-				</a>
-			</div>
+<div class="flex flex-col min-h-screen bg-neutral-700">
+    <header class="h-14 flex flex-row justify-between bg-pokeball-top text-white px-8">
+        <div class="flex items-center {headerOutsideWidth}">
+            <a href="/" class="flex items-center justify-center space-x-2">
+                <img src={pokeballIcon} alt="pokeball" class="w-8 h-8" />
+                <span class="font-medium text-2xl pb-1">Zorua</span>
+            </a>
+        </div>
 
-			<div class="flex items-center justify-center">
-				<nav>
-					{#each navLinks as navLink}
-						<a
-							href={navLink.href}
-							class="inline-block w-24 font-medium text-center transition-colors hover:text-black"
-							>{navLink.name}</a
-						>
-					{/each}
-				</nav>
-			</div>
+        <div class="flex items-center">
+            <nav>
+                {#each navLinks as navLink}
+                    <a href={navLink.href} class="inline-block w-24 text-center font-medium transition-colors hover:text-black"
+                        >{navLink.name}</a>
+                {/each}
+            </nav>
+        </div>
 
-			<div class="flex items-center justify-center">
-				<button class="font-medium transition-colors hover:text-black hover:cursor-pointer"> Login </button>
-			</div>
-		</div>
-		<div class="border-b"></div>
-		<div class="bg-white">
-			<div class="max-w-3xl mx-auto flex flex-row w-full items-center justify-between">
-				<input
-					name="globalSearch"
-					type="text"
-					placeholder="Search for Pokémon, moves, abilities..."
-					class="h-14 w-full text-lg rounded-lg focus:outline-none"
-				/>
-				<span class="text-gray-500">Ctrl+K</span>
-			</div>
-		</div>
-		<div class="border-b"></div>
-	</header>
+        <div class="flex items-center justify-end {headerOutsideWidth}">
+            <a title="github-repo" href="https://github.com/jariwilms/pokedex" target="_blank"
+                ><img src={githubIcon} alt="github-icon" class="w-8 h-8" /></a>
+        </div>
+    </header>
+    <div class="border-b border-b-neutral-400"></div>
+    <search class="bg-white">
+        <div class="max-w-3xl mx-auto flex flex-row items-center justify-between">
+            <input
+                name="globalSearch"
+                type="text"
+                placeholder="Search for Pokémon, Moves, Abilities..."
+                class="w-full h-14 text-lg focus:outline-none" />
+            <span class="text-gray-500">Ctrl+K</span>
+        </div>
+    </search>
+    <div class="border-b border-b-neutral-400"></div>
 
-	<main class="sm:w-full xl:w-1/2 mx-auto flex-1 flex flex-col">
-		<div class="pt-8 px-12 bg-neutral-50 flex-1">
-			{@render children()}
-		</div>
-	</main>
+    <main class="w-full 2xl:w-1/2 mx-auto flex flex-col grow">
+        <div class="pt-8 px-12 bg-white grow">
+            {@render children()}
+        </div>
+    </main>
 
-	<footer class="text-white bg-[#ff1616] py-2">
-		<div class="font-medium text-sm text-center text-white">
-			<p>&copy; 2025 Zorua. All rights reserved. Pokémon is a trademark of Nintendo.</p>
-		</div>
-	</footer>
+    <footer class="text-white bg-pokeball-top py-2">
+        <div class="font-medium text-sm text-center text-white">
+            <p>&copy; 2025 Zorua. All rights reserved. Pokémon is a trademark of Nintendo.</p>
+        </div>
+    </footer>
 </div>

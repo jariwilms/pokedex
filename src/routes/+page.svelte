@@ -9,13 +9,13 @@
     ];
 </script>
 
-<div>
-    <h1 class="mb-6 text-3xl font-bold text-gray-800">Welcome to Zorua</h1>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+<div class="flex flex-col space-y-8">
+    <h1 class="text-3xl font-bold text-neutral-800">Welcome to Zorua</h1>
+    <div class="grid grid-cols-2 gap-2">
         {#each navLinks as navLink }
-        <a href={navLink.href} class="p-6 bg-white rounded-lg border-2 border-red-200">
-            <div class="mb-3 text-4xl">{navLink.icon}</div>
-            <h3 class="text-xl font-semibold text-gray-800">{navLink.name}</h3>
+        <a href={navLink.href} class="p-6 bg-white rounded-sm border-2 border-neutral-800 flex flex-col space-y-2">
+            <div class="text-4xl">{navLink.icon}</div>
+            <h3 class="text-xl font-medium text-neutral-800">{navLink.name}</h3>
         </a>
         {/each}
     </div>
