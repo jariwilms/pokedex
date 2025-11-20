@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-background          : oklch(0.9037 0       0  );
+    --color-pokeball-top        : oklch(0.6332 0.2524 28.6);
+    --color-pokeball-bottom     : oklch(1      0       0  );
+    --color-pokeball-outline    : oklch(0      0       0  );
+    
+    --color-type-normal         : oklch(0.7068 0.0037 145.54);
+    --color-type-fighting       : oklch(0.7319 0.1858  52.98);
+    --color-type-flying         : oklch(0.7676 0.0975 248.31);
+    --color-type-poison         : oklch(0.5458 0.2068 307.44);
+    --color-type-ground         : oklch(0.5019 0.1051  54.06);
+    --color-type-rock           : oklch(0.7296 0.0552 100.49);
+    --color-type-bug            : oklch(0.6735 0.1483 116.79);
+    --color-type-ghost          : oklch(0.4494 0.0937 326.99);
+    --color-type-steel          : oklch(0.6742 0.0746 222.79);
+    --color-type-fire           : oklch(0.5967 0.2225  27.14);
+    --color-type-water          : oklch(0.6091 0.1858 256.75);
+    --color-type-grass          : oklch(0.6272 0.18   140.42);
+    --color-type-electric       : oklch(0.837  0.1712  86.5 );
+    --color-type-psychic        : oklch(0.6447 0.2118   6.29);
+    --color-type-ice            : oklch(0.7916 0.1287 219.19);
+    --color-type-dragon         : oklch(0.5506 0.195  272.87);
+    --color-type-dark           : oklch(0.4423 0.0284  15.08);
+    --color-type-fairy          : oklch(0.7398 0.2154 327.48);
+    --color-type-stellar        : oklch(0.7037 0.1063 182.44);
+    --color-type-unknown        : oklch(0.6621 0.0639 174.32);
+
+    --color-stat-hp             : oklch(0.7952 0.2359 136.74);
+    --color-stat-attack         : oklch(0.85   0.1713  96.17);
+    --color-stat-defense        : oklch(0.6588 0.1822  45.09);
+    --color-stat-special-attack : oklch(0.7593 0.1392 223.23);
+    --color-stat-special-defense: oklch(0.5647 0.1818 268.48);
+    --color-stat-speed          : oklch(0.5981 0.2464 339.69);
+
+    --font-roboto               : "Roboto", sans-serif;
+}
+
+:root {
+    --header-side-width: 200px;
+}
+
+.grid-cols-3-equal-center {
+    grid-template-columns: var(--header-side-width) 1fr var(--header-side-width);
+}
