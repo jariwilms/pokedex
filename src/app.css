@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import "tailwindcss";
 
 @theme {
-    --color-background          : oklch(0.9037 0       0  );
-    --color-pokeball-top        : oklch(0.6332 0.2524 28.6);
-    --color-pokeball-bottom     : oklch(1      0       0  );
-    --color-pokeball-outline    : oklch(0      0       0  );
+    --color-background          : oklch(0.9037 0        0   );
+    --color-pokeball-top        : oklch(0.6332 0.2524  28.6 );
+    --color-pokeball-bottom     : oklch(1      0        0   );
+    --color-pokeball-outline    : oklch(0      0        0   );
     
     --color-type-normal         : oklch(0.7068 0.0037 145.54);
     --color-type-fighting       : oklch(0.7319 0.1858  52.98);
@@ -34,8 +33,6 @@
     --color-stat-special-attack : oklch(0.7593 0.1392 223.23);
     --color-stat-special-defense: oklch(0.5647 0.1818 268.48);
     --color-stat-speed          : oklch(0.5981 0.2464 339.69);
-
-    --font-roboto               : "Roboto", sans-serif;
 }
 
 :root {
