@@ -35,11 +35,6 @@
         else if (multiplier == 2/1) return "bg-green-"   + 400;
         else if (multiplier == 4/1) return "bg-green-"   + 500;
     }
-
-    let res = interactions.reduce((accumulator, element) => {
-        return accumulator + element.multiplier;
-    }, 0) / interactions.length;
-    console.log(res.toPrecision(2));
 </script>
 
 <table class="border-collapse">
