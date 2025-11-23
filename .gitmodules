@@ -1,0 +1,3 @@
+[submodule "src/lib/pokedex/data/sprites"]
+	path = src/lib/pokedex/data/sprites
+	url = https://github.com/PokeAPI/sprites.git
