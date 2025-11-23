@@ -2,7 +2,6 @@
     import "../app.css";
     import pokeballIcon from "$lib/assets/icons/pokeball.svg";
     import githubIcon from "$lib/assets/icons/github-mark-white.svg";
-    import { title } from "process";
 
     let { children } = $props();
 

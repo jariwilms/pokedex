@@ -9,7 +9,6 @@
     import { typeIndex } from "$lib/pokedex/data/type-index";
     
     const evolutionTypes = [
-
         "none",
         "linear",
         "branch",
@@ -40,7 +39,8 @@
 
     const { data }                                    = $props();
     const { pokemon, species, evolutionChain, moves } = data;
-    const empoleonImage                               = pokemon.sprites.other["official-artwork"].front_default;
+    const pokemonImage                                = pokemon.sprites.other["official-artwork"].front_default;
+    
     const genderWidths                                = ["w-0", "w-1/8", "w-2/8", "w-3/8", "w-4/8", "w-5/8", "w-6/8", "w-7/8", "w-full"];
     const selectedLanguage                            = $state("en");
     const genus                                       = $derived(species.genera.find((element) => {
@@ -94,12 +94,8 @@
                 pp            : element.pp                                       , 
                 type          : element.type.name                                , 
                 damageCategory: element.damage_class.name                        , 
-                // id: element.machines[0].
             };
         })
-        // .sort((first, second) => {
-        //     // return first.
-        // });
     
     const damageCategoryImages = {
         physical: physicalImage, 
@@ -135,7 +131,7 @@
         <h2 class="text-2xl">Pokedex entry</h2>
         <div class="grid grid-cols-1 gap-4 xl:grid-cols-3">
             <div class="flex flex-col items-center border-x-2 border-x-red-500 xl:order-3">
-                <img src={empoleonImage} alt="empoleon" fetchpriority="high"/>
+                <img src={pokemonImage} alt="empoleon" fetchpriority="high"/>
                 <span>other versions</span>
             </div>
             
@@ -203,7 +199,7 @@
         <div class="flex flex-row items-center justify-center gap-4">
             {#each evolutions as evolution, index}
             <div class="flex flex-col items-center">
-                <img src={empoleonImage} alt={evolution.name} class="max-h-42">
+                <img src={pokemonImage} alt={evolution.name} class="max-h-42">
                 {capitalize(evolution.name)}
             </div>
                 {#if index < evolutions.length - 1}
