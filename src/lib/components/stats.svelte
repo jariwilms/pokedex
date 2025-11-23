@@ -73,12 +73,13 @@
 			<td>
 				<div class="flex flex-row items-center justify-center">
 					<input
-						id="selectedLevel"
+						name="selectedLevel"
 						type="range"
 						min="1"
 						max="100"
 						bind:value={selectedLevel}
 						class="w-full h-4 appearance-none bg-gray-300 rounded-full"
+						aria-label="selected level"
 					/>
 					<div class="flex flex-row pl-3">
 						<span>level</span>

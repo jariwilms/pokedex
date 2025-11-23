@@ -14,15 +14,15 @@ export async function load({params, fetch, setHeaders}) {
     const moves          = await Promise.all(
         pokemon.moves.map(element => fetchAs<Move>(fetch, element.move.url))
     );
-
+    
     setHeaders({
-        "cache-control": "public, max-age=86400", //1 day
+        "cache-control": "public, max-age=604800", //7 days
     });
 
     return {
         pokemon       : pokemon       , 
         species       : species       , 
         evolutionChain: evolutionChain, 
-        moves         : moves, 
+        moves         : moves         , 
     };
 }
